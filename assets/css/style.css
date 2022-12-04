@@ -9,5 +9,24 @@
 }
 
 body {
-    font-family: "Lato", "Poppins", sans-serif;
+    font-family: "Lato", "Poppins", sans-serif;  
+}
+
+/* Logo section styling */
+.center-section {
+    margin-top: 30px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#logo {
+    font-size: 2rem;
+}
+
+#logo-description {
+    font-size: 1.5rem;
 }
