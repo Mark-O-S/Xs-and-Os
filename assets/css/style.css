@@ -10,13 +10,13 @@
 
 body {
     font-family: "Lato", "Poppins", sans-serif;
-    background-color: #62efff;
+    background-color: #4fc3f7;
 }
 
 /* Logo section styling */
 
 .center-section {
-    margin-top: 50px;
+    margin-top: 40px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -26,14 +26,21 @@ body {
 }
 
 #logo {
+    padding: 10px;
     font-size: 2rem;
     color: #000000;
 }
 
+#logo > b {
+    font-style: italic;
+}
+
 #logo-description {
     font-size: 1.5rem;
+    margin-top: 10px;
+    padding: 10px;
 }
- 
+
 /* Options */ 
 
 .options {
