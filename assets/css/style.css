@@ -54,8 +54,13 @@ body {
     padding: 10px;
     margin: 20px;
     font-size: 1.5rem;
-    border: 3px solid black;
+    border: 3px solid #000000;
     border-radius: 35px;
+}
+
+.options-btn:hover {
+    transform: rotate(3deg);
+    transition: transform .5s ease-in-out;
 }
 
 #pvp-btn {
@@ -63,12 +68,58 @@ body {
     color: #ffffff;
 }
 
+#pvp-btn:hover {
+    background-color: #f44336;
+}
+
 #pvb-btn {
     background-color: #f57c00;
     color: #ffffff;
 }
 
+#pvb-btn:hover {
+    background-color: #ff9800;
+}
+
 #how-to-btn{
-    background-color: #4caf50;
+    background-color: #43a047;
     color: #ffffff;
+}
+
+#how-to-btn:hover {
+    background-color: #4caf50;
+}
+
+/* Footer content */
+
+footer {
+    padding: 10px;
+    margin-top: 40px;
+}
+
+footer > ul {
+    list-style: none;
+    font-size: 2rem;
+}
+
+li > a {
+    color: #000000;
+}
+
+li a:hover {
+    opacity: 0.7;
+}
+
+#signature {
+    font-size: 1rem;
+    margin: 10px;
+}
+
+.show-inline {
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: auto;
 }
