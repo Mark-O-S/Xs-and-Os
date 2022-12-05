@@ -9,12 +9,14 @@
 }
 
 body {
-    font-family: "Lato", "Poppins", sans-serif;  
+    font-family: "Lato", "Poppins", sans-serif;
+    background-color: #62efff;
 }
 
 /* Logo section styling */
+
 .center-section {
-    margin-top: 30px;
+    margin-top: 50px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -25,8 +27,41 @@ body {
 
 #logo {
     font-size: 2rem;
+    color: #000000;
 }
 
 #logo-description {
     font-size: 1.5rem;
+}
+ 
+/* Options */ 
+
+.options {
+    margin: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.options-btn {
+    padding: 10px;
+    margin: 20px;
+    font-size: 1.5rem;
+    border: 3px solid black;
+    border-radius: 35px;
+}
+
+#pvp-btn {
+    background-color: #e53935;
+    color: #ffffff;
+}
+
+#pvb-btn {
+    background-color: #f57c00;
+    color: #ffffff;
+}
+
+#how-to-btn{
+    background-color: #4caf50;
+    color: #ffffff;
 }
