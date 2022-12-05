@@ -25,6 +25,15 @@ body {
     text-align: center;
 }
 
+.logo-img {
+    height: 2rem;
+    width: 2rem;
+}
+
+.logo-img:hover {
+    transform: rotate(50deg);
+}
+
 #logo {
     padding: 10px;
     font-size: 2rem;
