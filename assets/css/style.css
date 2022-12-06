@@ -130,6 +130,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .row:first-child,
@@ -155,6 +156,7 @@ body {
 .row.x::before,
 .row.x::after {
     content: '';
+    position: absolute;
     width: calc(var(--mark-size) * 0.15);
     height: var(--mark-size);
     background-color: #000000;
