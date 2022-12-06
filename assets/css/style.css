@@ -15,7 +15,7 @@ body {
 
 :root {
     --row-size: 100px;
-    --mark-size: cal(var(--row-size) * .9); 
+    --mark-size: calc(var(--row-size) * .9); 
 }
 
 /* Logo section styling */
@@ -127,6 +127,9 @@ body {
     width: var(--row-size);
     height: var(--row-size);
     border: 3px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .row:first-child,
@@ -149,8 +152,21 @@ body {
     border-right: none;
 }
 
+.row.x::before,
+.row.x::after {
+    content: '';
+    width: calc(var(--mark-size) * 0.15);
+    height: var(--mark-size);
+    background-color: #000000;
+}
 
+.row.x::before {
+    transform: rotate(45deg);
+}
 
+.row.x::after {
+    transform: rotate(-45deg);
+}
 
 
 /* How to play modal section */
