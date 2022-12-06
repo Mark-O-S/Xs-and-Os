@@ -65,11 +65,13 @@ body {
     font-size: 1.5rem;
     border: 3px solid #000000;
     border-radius: 35px;
+    cursor: pointer;
 }
 
 .options-btn:hover {
     transform: rotate(3deg);
     transition: transform .5s ease-in-out;
+    
 }
 
 #pvp-btn {
@@ -132,9 +134,11 @@ body {
 .how-to-modal-header .how-to-title {
     font-size: 1.5rem;
     font-weight: bold;
+    justify-content: center;
+    justify-items: center;
 }
 
-.how-to-modal-header .x-button {
+.how-to-modal-header .close-button {
     cursor: pointer;
     border: none;
     outline: none;
@@ -149,15 +153,16 @@ body {
 }
 
 #how-to-overlay {
+    pointer-events: none;
     position: fixed;
-    /* opacity: 0; */
+    opacity: 0;
     transition: 200ms ease-in-out;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.3);
-    pointer-events: none;
+    
 }
 
 #how-to-overlay.active {
