@@ -131,6 +131,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    cursor: pointer;
 }
 
 .row:first-child,
@@ -151,6 +152,11 @@ body {
 
 .row:nth-child(3n + 3) {
     border-right: none;
+}
+
+.row.x,
+.row.circle {
+    cursor: not-allowed;
 }
 
 .row.x::before,
