@@ -126,9 +126,32 @@ body {
 .row {
     width: var(--row-size);
     height: var(--row-size);
-    background-color: #000000;
-    border: 1px solid #ffffff;
+    border: 3px solid #000000;
 }
+
+.row:first-child,
+.row:nth-child(2),
+.row:nth-child(3) {
+    border-top: none;
+}
+
+.row:last-child,
+.row:nth-child(8),
+.row:nth-child(7) {
+    border-bottom: none;
+}
+
+.row:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.row:nth-child(3n + 3) {
+    border-right: none;
+}
+
+
+
+
 
 /* How to play modal section */
 .how-to-modal {
