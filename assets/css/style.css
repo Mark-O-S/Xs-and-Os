@@ -101,6 +101,12 @@ body {
     background-color: #4caf50;
 }
 
+.click-btn {
+    color: #ffffff;
+}
+
+/* Player vs Player */
+
 /* How to play modal section */
 .how-to-modal {
     position: fixed;
