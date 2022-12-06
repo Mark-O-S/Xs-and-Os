@@ -13,6 +13,11 @@ body {
     background-color: #4fc3f7;
 }
 
+:root {
+    --row-size: 100px;
+    --mark-size: cal(var(--row-size) * .9); 
+}
+
 /* Logo section styling */
 
 .center-section {
@@ -106,6 +111,24 @@ body {
 }
 
 /* Player vs Player */
+
+.board {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.row {
+    width: var(--row-size);
+    height: var(--row-size);
+    background-color: #000000;
+    border: 1px solid #ffffff;
+}
 
 /* How to play modal section */
 .how-to-modal {
