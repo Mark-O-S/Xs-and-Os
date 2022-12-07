@@ -19,7 +19,7 @@
     <!-- Logo heading -->
 
     <div class="center-section">
-        
+
         <a href="index.html" id="logo">
             <img class="logo-img" src="assets/images/tic-tac-toe-b&w.png" alt="tic tac toe image logo">
             <b>X's</b> and <b>O's</b>
@@ -30,25 +30,45 @@
     <!-- Player vs Player game section -->
 
     <div class="board">
-        <div class="row x" data-row></div>
-        <div class="row" data-row></div>
-        <div class="row circle" data-row></div>
-        <div class="row" data-row></div>
-        <div class="row" data-row></div>
-        <div class="row" data-row></div>
-        <div class="row" data-row></div>
-        <div class="row" data-row></div>
-        <div class="row" data-row></div>
+        <div class="row x" data-row="0" data-column="0">
+
+        </div>
+        <div class="row" data-row="0" data-column="1">
+
+        </div>
+        <div class="row circle" data-row="0" data-column="2">
+
+        </div>
+        <div class="row" data-row="1" data-column="0">
+
+        </div>
+        <div class="row" data-row="1" data-column="1">
+
+        </div>
+        <div class="row" data-row="1" data-column="2">
+
+        </div>
+        <div class="row" data-row="2" data-column="0">
+
+        </div>
+        <div class="row" data-row="2" data-column="1">
+
+        </div>
+        <div class="row" data-row="2" data-column="2">
+            
+        </div>
     </div>
 
-    <div class="winner-message" id="winnerMessage">
-        <div data-winner-message></div>
+
+    <div class="restart">
         <button id="restartButtonn">Play again!</button>
     </div>
+    
+
 
 
     <!-- Footer section -->
-    
+
     <footer class="center-section">
 
         <ul class="show-inline">
@@ -57,14 +77,14 @@
                     aria-label="Click this link to visit Mark's Github profile(opens in a new tab">
                     <i class="fa-brands fa-github"></i>
                 </a>
-                
+
             </li>
             <li>
                 <a href="https://www.linkedin.com/in/mark-o-sullivan-592484191/" target="_blank" rel="noopener"
                     aria-label="Click this link to visit Mark's LinkedIn profile(opens in a new tab">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                
+
             </li>
 
         </ul>
