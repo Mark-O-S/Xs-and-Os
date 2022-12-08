@@ -38,7 +38,7 @@ function closeModal(modal) {
 }
 
 
-//Create variable for player 'X' and player 'O'
+// Create variable for player 'X' and player 'O'
 
 const PLAYER_X = 'x'
 const PLAYER_CIRCLE = 'circle'
@@ -56,3 +56,13 @@ const WINNING_COMBO = [
     [2, 4, 6]
 ]
 
+// Target data-row attribute with square bracket
+
+const dataRow = document.querySelectorAll ('[data-row]')
+
+// Target the following attributes
+
+const theBoard = document.getElementById ('board')
+const winningMessage = document.getElementById ('winningMsg')
+const winningMessageText = document.getElementById ('winningMsgText')
+const playAgain = document.getElementById ('restartButton')

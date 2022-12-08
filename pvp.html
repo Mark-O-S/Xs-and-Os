@@ -29,14 +29,14 @@
 
     <!-- Player vs Player game section -->
 
-    <div class="board">
-        <div class="row x" data-row="0">
+    <div class="board" id="board">
+        <div class="row" data-row>
 
         </div>
         <div class="row" data-row>
 
         </div>
-        <div class="row circle" data-row>
+        <div class="row" data-row>
 
         </div>
         <div class="row" data-row>
@@ -59,8 +59,11 @@
         </div>
     </div>
 
-    <div class="restart">
+    <div class="winning-msg" id="winningMsg">
+
+        <div id="winningMsgText"></div>
         <button id="restartButton">Play again!</button>
+
     </div>
     
 
