@@ -1,19 +1,3 @@
-// Target all cells with class of "row"
-// Set up event listener for when each cell is clicked
-
-function clickThis() {
-    console.log(this.row)
-}
-
-let cellars = document.getElementsByClassName("row")
-console.log("these are cells", cellars)
-for (let i = 0; i < cellars.length; i++) {
-    cellars[i].addEventListener('click', clickThis);
-}
-
-
-
-
 // Modal pop up box for the 'How to play' section
 
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
@@ -52,18 +36,23 @@ function closeModal(modal) {
     modal.classList.remove('active')
     overlay.classList.remove('active')
 }
-console.log("fhjiowesjfgoiJwepgIOJH")
-
-// Create the game board
-// const gameBoard = [
-//     ["", "", ""],
-//     ["", "", ""],
-//     ["", "", ""]
-// ]
-// console.log("these are cells")
-
-// // Update the game board for when a user clicks 
 
 
+//Create variable for player 'X' and player 'O'
 
+const PLAYER_X = 'x'
+const PLAYER_CIRCLE = 'circle'
+
+// Set rule to win the game 
+
+const WINNING_COMBO = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+]
 

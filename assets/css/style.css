@@ -110,7 +110,7 @@ body {
     color: #ffffff;
 }
 
-/* Player vs Player / Player vs Bot Game Board */
+/* Create Player vs Player / Player vs Bot Game Board */
 
 .board {
     width: 100vw;
@@ -134,11 +134,15 @@ body {
     cursor: pointer;
 }
 
+/* Remove top border lines of the board */
+
 .row:first-child,
 .row:nth-child(2),
 .row:nth-child(3) {
     border-top: none;
 }
+
+/* Remove bottom border lines of the board */
 
 .row:last-child,
 .row:nth-child(8),
@@ -146,17 +150,25 @@ body {
     border-bottom: none;
 }
 
+/* Remove border lines of the left side of board */
 .row:nth-child(3n + 1) {
     border-left: none;
 }
+
+/* Remove border lines of the right side of board */
 
 .row:nth-child(3n + 3) {
     border-right: none;
 }
 
-.row.x,
-.row.circle {
-    cursor: not-allowed;
+/* Create player 'X' */
+
+.row.x::before {
+    transform: rotate(45deg);
+}
+
+.row.x::after {
+    transform: rotate(-45deg);
 }
 
 .row.x::before,
@@ -168,13 +180,7 @@ body {
     background-color: #000000;
 }
 
-.row.x::before {
-    transform: rotate(45deg);
-}
-
-.row.x::after {
-    transform: rotate(-45deg);
-}
+/* Create player 'O' */
 
 .row.circle::before,
 .row.circle::after {
@@ -193,6 +199,12 @@ body {
     width: calc(var(--mark-size) * 0.55);
     height: calc(var(--mark-size) * 0.55);
     background-color: #4fc3f7;
+}
+
+/* When 'X' or 'O' is already filled */
+.row.x,
+.row.circle {
+    cursor: not-allowed;
 }
 
 /* How to play modal section */
