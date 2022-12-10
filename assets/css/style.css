@@ -14,8 +14,10 @@ body {
 }
 
 :root {
-    --row-size: 100px;
-    --mark-size: calc(var(--row-size) * .9); 
+    --cell-size: 100px; 
+    --color: #818181;
+    --color-set: navy;
+    --l: 10px;
 }
 
 /* Logo section styling */
@@ -123,42 +125,48 @@ body {
     align-items: center;
 }
 
-.row {
-    width: var(--row-size);
-    height: var(--row-size);
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
     border: 3px solid #000000;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: relative;cell
     cursor: pointer;
 }
 
-/* Remove top border lines of the board */
+/* Remove the border edges of the board */
 
-.row:first-child,
-.row:nth-child(2),
-.row:nth-child(3) {
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
     border-top: none;
 }
 
-/* Remove bottom border lines of the board */
-
-.row:last-child,
-.row:nth-child(8),
-.row:nth-child(7) {
-    border-bottom: none;
-}
-
-/* Remove border lines of the left side of board */
-.row:nth-child(3n + 1) {
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7) {
     border-left: none;
 }
 
-/* Remove border lines of the right side of board */
-
-.row:nth-child(3n + 3) {
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9) {
     border-right: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+    border-bottom: none;
+}
+
+/* When 'X' or 'O' is already filled */
+
+.cell.x,
+.cell.circle {
+    cursor: not-allowed;
 }
 
 /* Create player 'X' */
@@ -199,12 +207,6 @@ body {
     width: calc(var(--mark-size) * 0.55);
     height: calc(var(--mark-size) * 0.55);
     background-color: #4fc3f7;
-}
-
-/* When 'X' or 'O' is already filled */
-.row.x,
-.row.circle {
-    cursor: not-allowed;
 }
 
 /* Winning message */
