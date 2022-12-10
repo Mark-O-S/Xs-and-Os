@@ -207,6 +207,8 @@ body {
     cursor: not-allowed;
 }
 
+/* Winning message */
+
 .winning-msg {
     display: none;
     position: fixed;
@@ -220,6 +222,19 @@ body {
     color: #ffffff;
     font-size: 1.5rem;
     flex-direction: column;
+}
+
+.winning-msg button {
+    border-radius: 10px;
+    font-size: 2rem;
+    background-color: #43a047;
+    border: 1px solid #000000;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+}
+
+.winning-msg.show {
+    display: flex;
 }
 
 /* How to play modal section */
