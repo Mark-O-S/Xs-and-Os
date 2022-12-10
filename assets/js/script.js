@@ -1,45 +1,8 @@
-// Modal pop up box for the 'How to play' section
-
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
-const overlay = document.getElementById('how-to-overlay')
-
-openModalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const modal = document.querySelector(button.dataset.modalTarget)
-        openModal(modal)
-    })
-})
-
-overlay.addEventListener('click', () => {
-    const modals = document.querySelectorAll('.how-to-modal.active')
-    modals.forEach(modal => {
-        closeModal(modal)
-    })
-})
-
-closeModalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const modal = button.closest('.how-to-modal')
-        closeModal(modal)
-    })
-})
-
-function openModal(modal) {
-    if (modal === null) return
-    modal.classList.add('active')
-    overlay.classList.add('active')
-}
-
-function closeModal(modal) {
-    if (modal === null) return
-    modal.classList.remove('active')
-    overlay.classList.remove('active')
-}
 
 
 // Create variable for player 'X' and player 'O'
 // Set rule to win the game 
+
 const PLAYER_X = 'x'
 const PLAYER_CIRCLE = 'circle'
 const WINNING_COMBO = [
@@ -145,4 +108,43 @@ function checkWin(currentPlayer) {
             return cellElements[index].classList.contains(currentPlayer)
         })
     })
+}
+
+// Modal pop up box for the 'How to play' section
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('how-to-overlay')
+
+openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+        openModal(modal)
+    })
+})
+
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.how-to-modal.active')
+    modals.forEach(modal => {
+        closeModal(modal)
+    })
+})
+
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.how-to-modal')
+        closeModal(modal)
+    })
+})
+
+function openModal(modal) {
+    if (modal === null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+    if (modal === null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
 }
