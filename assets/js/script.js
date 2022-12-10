@@ -68,14 +68,14 @@ const winningMessageText = document.getElementById ('winningMsgText')
 const playAgain = document.getElementById ('restartButton')
 
 
-// Functions for starting the game
+// Start game function
 
 let circleFirst
 
 startGame()
 restartButton.addEventListener('click', startGame)
 
-function startGame () {
+function startGame() {
     circleFirst = false
     dataRow.forEach (row => {
         row.classList.remove (PLAYER_X)
@@ -85,4 +85,23 @@ function startGame () {
     })
     setBoardHoverClass ()
     winningMessage.classList.remove ('show')
+}
+
+// End game function
+
+function endGame(draw) {
+    if (draw) {
+        winningMessageText.innerText = "It's a draw!"
+    } else {
+        winningMessageText.innerText = `Player with ${circleFirst ? "X's" : "O's"} win!`
+    }
+    winningMessage.classList.add('show')
+}
+
+// Draw game function
+
+function isaDraw() {
+    return [...dataRow].every(row => {
+        return row.classList.contains(PLAYER_X) || row.classList.contains(PLAYER_CIRCLE)
+    })
 }
