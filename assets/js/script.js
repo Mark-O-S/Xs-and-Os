@@ -66,3 +66,23 @@ const theBoard = document.getElementById ('board')
 const winningMessage = document.getElementById ('winningMsg')
 const winningMessageText = document.getElementById ('winningMsgText')
 const playAgain = document.getElementById ('restartButton')
+
+
+// Functions for starting the game
+
+let circleFirst
+
+startGame()
+restartButton.addEventListener('click', startGame)
+
+function startGame () {
+    circleFirst = false
+    dataRow.forEach (row => {
+        row.classList.remove (PLAYER_X)
+        row.classList.remove (PLAYER_CIRCLE)
+        row.removeEventListener ('click', handleRowClick)
+        row.addEventListener ('click', handleRowClick, { once: true })
+    })
+    setBoardHoverClass ()
+    winningMessage.classList.remove ('show')
+}
