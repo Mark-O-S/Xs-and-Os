@@ -105,3 +105,49 @@ function isaDraw() {
         return row.classList.contains(PLAYER_X) || row.classList.contains(PLAYER_CIRCLE)
     })
 }
+
+// Place Mark function
+
+function placeMark(row, currentPlayer) {
+    row.classList.add(currentPlayer)
+}
+
+function nextTurn() {
+    circleFirst = !circleFirst
+}
+
+function setBoardHoverClass () {
+    theBoard.classList.remove(PLAYER_X)
+    theBoard.classList.remove(PLAYER_CIRCLE)
+    if (circleFirst) {
+        theBoard.classList.add(PLAYER_CIRCLE)
+    } else {
+        theBoard.classList.add(PLAYER_X)
+    }
+}
+
+function handleRowClick (mouse) {
+    const row = mouse.target
+    const currentPlayer = circleFirst ? PLAYER_X : PLAYER_CIRCLE
+
+    placeMark(row, currentPlayer)
+
+    if (checkWin (currentPlayer)) {
+        endGame(false)
+    } else if (isaDraw()) {
+        endGame(true)
+    } else {
+        nextTurn()
+        setBoardHoverClass()
+    }
+}
+
+function checkWin (currentPlayer) {
+    return WINNING_COMBO.some(combination => {
+        return combination.every(index => {
+            return dataRow[index].classList.contains(currentPlayer)
+        })
+    })
+}
+
+
