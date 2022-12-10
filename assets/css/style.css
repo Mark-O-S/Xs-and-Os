@@ -365,3 +365,10 @@ li a:hover {
     justify-content: center;
     height: auto;
 }
+
+/* Media Query for screen sizes below 450px */
+@media screen and (max-width: 450px) {
+    .winning-msg {
+        font-size: 2rem;
+    }
+}
