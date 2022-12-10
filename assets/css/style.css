@@ -5,6 +5,9 @@
     padding: 0px;
     text-decoration: none;
     list-style: none;
+}
+
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -15,9 +18,7 @@ body {
 
 :root {
     --cell-size: 100px; 
-    --color: #818181;
-    --color-set: navy;
-    --l: 10px;
+    --mark-size: calc(var(--cell-size) * 0.7);
 }
 
 /* Logo section styling */
@@ -132,34 +133,30 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;cell
+    position: relative;
     cursor: pointer;
 }
 
 /* Remove the border edges of the board */
 
-.cell:nth-child(1),
+.cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3) {
-    border-top: none;
+  border-top: none;
 }
 
-.cell:nth-child(1),
-.cell:nth-child(4),
-.cell:nth-child(7) {
-    border-left: none;
+.cell:nth-child(3n + 1) {
+  border-left: none;
 }
 
-.cell:nth-child(3),
-.cell:nth-child(6),
-.cell:nth-child(9) {
-    border-right: none;
+.cell:nth-child(3n + 3) {
+  border-right: none;
 }
 
-.cell:nth-child(7),
+.cell:last-child,
 .cell:nth-child(8),
-.cell:nth-child(9) {
-    border-bottom: none;
+.cell:nth-child(7) {
+  border-bottom: none;
 }
 
 /* When 'X' or 'O' is already filled */
@@ -171,42 +168,61 @@ body {
 
 /* Create player 'X' */
 
-.row.x::before {
-    transform: rotate(45deg);
+
+.cell.x::before,
+.cell.x::after,
+.cell.circle::before {
+  background-color: black;
 }
 
-.row.x::after {
-    transform: rotate(-45deg);
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  background-color: lightgrey;
 }
 
-.row.x::before,
-.row.x::after {
-    content: '';
-    position: absolute;
-    width: calc(var(--mark-size) * 0.2);
-    height: var(--mark-size);
-    background-color: #000000;
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  content: '';
+  position: absolute;
+  width: calc(var(--mark-size) * .15);
+  height: var(--mark-size);
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  transform: rotate(-45deg);
 }
 
 /* Create player 'O' */
 
-.row.circle::before,
-.row.circle::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
 }
 
-.row.circle::before {
-    width: var(--mark-size);
-    height: var(--mark-size);
-    background-color: #000000;
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
 }
 
-.row.circle::after {
-    width: calc(var(--mark-size) * 0.55);
-    height: calc(var(--mark-size) * 0.55);
-    background-color: #4fc3f7;
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  width: calc(var(--mark-size) * .65);
+  height: calc(var(--mark-size) * .65);
+  background-color: #4fc3f7;
 }
 
 /* Winning message */
@@ -218,21 +234,27 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #000000;
+    background-color: var(--color-set);
     justify-content: center;
     align-items: center;
     color: #ffffff;
-    font-size: 1.5rem;
+    font-size: 4rem;
     flex-direction: column;
 }
 
 .winning-msg button {
     border-radius: 10px;
     font-size: 2rem;
-    background-color: #43a047;
-    border: 1px solid #000000;
+    background-color: #ffffff;
+    border: 1px solid var(--color-set);
     padding: 0.25em 0.5em;
     cursor: pointer;
+}
+
+.winning-message button:hover {
+	background-color: var(--color-set);
+	color: #ffffff;
+	border-color: #ffffff;
 }
 
 .winning-msg.show {

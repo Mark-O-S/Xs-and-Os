@@ -13,7 +13,7 @@ openModalButtons.forEach(button => {
 
 overlay.addEventListener('click', () => {
     const modals = document.querySelectorAll('.how-to-modal.active')
-    modals.forEach( modal => {
+    modals.forEach(modal => {
         closeModal(modal)
     })
 })
@@ -39,12 +39,9 @@ function closeModal(modal) {
 
 
 // Create variable for player 'X' and player 'O'
-
+// Set rule to win the game 
 const PLAYER_X = 'x'
 const PLAYER_CIRCLE = 'circle'
-
-// Set rule to win the game 
-
 const WINNING_COMBO = [
     [0, 1, 2],
     [3, 4, 5],
@@ -57,82 +54,41 @@ const WINNING_COMBO = [
 ]
 
 // Target data-row attribute with square bracket
-
-const dataRow = document.querySelectorAll ('[data-row]')
-
 // Target the following attributes
-
-const theBoard = document.getElementById ('board')
-const winningMessage = document.getElementById ('winningMsg')
-const winningMessageText = document.getElementById ('winningMsgText')
-const playAgain = document.getElementById ('restartButton')
-
+const cellElements = document.querySelectorAll('[data-cell]')
+const boardElement = document.getElementById('board')
+const winningMessage = document.getElementById('winningMsg')
+const winningMessageText = document.getElementById('winningMsgText')
+const playAgain = document.getElementById('restartButton')
 
 // Start game function
 
 let circleFirst
 
 startGame()
+
 restartButton.addEventListener('click', startGame)
 
 function startGame() {
-    circleFirst = false
-    dataRow.forEach (row => {
-        row.classList.remove (PLAYER_X)
-        row.classList.remove (PLAYER_CIRCLE)
-        row.removeEventListener ('click', handleRowClick)
-        row.addEventListener ('click', handleRowClick, { once: true })
+    circleTurn = false
+    cellElements.forEach(cell => {
+        cell.classList.remove(PLAYER_X)
+        cell.classList.remove(PLAYER_CIRCLE)
+        cell.removeEventListener('click', handleCellClick)
+        cell.addEventListener('click', handleCellClick, {
+            once: true
+        })
     })
-    setBoardHoverClass ()
-    winningMessage.classList.remove ('show')
+    setBoardHoverClass()
+    winningMessage.classList.remove('show')
 }
 
-// End game function
+function handleCellClick(e) {
+    const cell = e.target
+    const currentPlayer = circleFirst ? PLAYER_CIRCLE : PLAYER_X
+    placeMark(cell, currentPlayer)
 
-function endGame(draw) {
-    if (draw) {
-        winningMessageText.innerText = "It's a draw!"
-    } else {
-        winningMessageText.innerText = `Player with ${circleFirst ? "X's" : "O's"} win!`
-    }
-    winningMessage.classList.add('show')
-}
-
-// Draw game function
-
-function isaDraw() {
-    return [...dataRow].every(row => {
-        return row.classList.contains(PLAYER_X) || row.classList.contains(PLAYER_CIRCLE)
-    })
-}
-
-// Place Mark function
-
-function placeMark(row, currentPlayer) {
-    row.classList.add(currentPlayer)
-}
-
-function nextTurn() {
-    circleFirst = !circleFirst
-}
-
-function setBoardHoverClass () {
-    theBoard.classList.remove(PLAYER_X)
-    theBoard.classList.remove(PLAYER_CIRCLE)
-    if (circleFirst) {
-        theBoard.classList.add(PLAYER_CIRCLE)
-    } else {
-        theBoard.classList.add(PLAYER_X)
-    }
-}
-
-function handleRowClick (mouse) {
-    const row = mouse.target
-    const currentPlayer = circleFirst ? PLAYER_X : PLAYER_CIRCLE
-
-    placeMark(row, currentPlayer)
-
-    if (checkWin (currentPlayer)) {
+    if (checkWin(currentPlayer)) {
         endGame(false)
     } else if (isaDraw()) {
         endGame(true)
@@ -142,12 +98,51 @@ function handleRowClick (mouse) {
     }
 }
 
-function checkWin (currentPlayer) {
-    return WINNING_COMBO.some(combination => {
-        return combination.every(index => {
-            return dataRow[index].classList.contains(currentPlayer)
-        })
+// End game function
+
+function endGame(draw) {
+    if (draw) {
+        winningMessageText.innerText = "It's a draw!"
+    } else {
+        winningMessageText.innerText = `Player ${circleFirst ? 'O' : 'X'} Wins!`
+    }
+    winningMessage.classList.add('show')
+}
+
+// Game function if it's a draw
+
+function isaDraw() {
+    return [...cellElements].every(cell => {
+        return cell.classList.contains(PLAYER_X) || cell.classList.contains(PLAYER_CIRCLE)
     })
 }
 
+// Place Mark function
 
+function placeMark(cell, currentPlayer) {
+    cell.classList.add(currentPlayer)
+}
+
+// Move to next player after each turn
+
+function nextTurn() {
+    circleFirst = !circleFirst
+}
+
+function setBoardHoverClass() {
+    boardElement.classList.remove(PLAYER_X)
+    boardElement.classList.remove(PLAYER_CIRCLE)
+    if (circleFirst) {
+        boardElement.classList.add(PLAYER_CIRCLE)
+    } else {
+        boardElement.classList.add(PLAYER_X)
+    }
+}
+
+function checkWin(currentPlayer) {
+    return WINNING_COMBO.some(combination => {
+        return combination.every(index => {
+            return cellElements[index].classList.contains(currentPlayer)
+        })
+    })
+}
