@@ -99,6 +99,23 @@ Below will display the responsiveness of the game:
 <img src="assets/images/o-win.jpg">
 <img src="assets/images/player-draw.jpg">
 
+## Features to add in the future
+- I would like to add the option for a user to play against a bot if they wanted to. This can be done with the help of math.random() method.
+- I would like to add a sound effect for each time a user places their mark on the cell and different sound effects for when the game is won, lost or if it's a draw.
+- I would like to add a score card underneath the game in the event that games are played multiple times and if the user(s) wanted to keep track of their scores.
+
+# Technologies Used
+The following list are the types of technologies used in the creation of this website:
+- **[HTML5](https://en.wikipedia.org/wiki/HTML5)** (HyperText Markup Language) was used in creating the core content of the website.
+- **[CSS3](https://en.wikipedia.org/wiki/CSS)** (Cascading Style Sheet) was used in styling the website.
+- **[JavaScript](https://en.wikipedia.org/wiki/JavaScript)** was used to add functionality to the game and pop up boxes.
+- **[Balsamiq](https://balsamiq.com/wireframes/)** was used in designing the wireframes of the website prior to the creation of each page.
+- **[Google Fonts](https://fonts.google.com/)** was used to link and source different types of fonts for the website.
+- **[Font Awesome](https://fontawesome.com/)** was used to link and source different icons for the footer section.
+- **[Pexels](https://www.pexels.com/)** was used to source free copyright images which were used for the website.
+- **[TinyPNG](https://tinypng.com/)** was used to compress any image that was used for the website.
+- **[Coolors.co](https://coolors.co/000000-ffffff-4fc3f7-e53935-f44336-43a047-4caf50)** was used for choosing the colors for the website.
+
 One issue during the creation stage was that I was not able to see the game fully playing out as I expected it to. I tried changing keywords and functions around on the "script.js" file.
 I managed to fix this issue by moving the whole "// Modal pop up box for the 'How to play' section" from the top of the script.js file to the bottom. After moving this and creating a separate file for the javascript functions, I was able to see my fully functioning code for both the modal pop up box and the game finally worked.
 I am still not sure as to why I have to separate these files and codes however.
