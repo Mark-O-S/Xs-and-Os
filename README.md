@@ -51,7 +51,7 @@ I used [Coolors.co](https://coolors.co/000000-ffffff-4fc3f7-e53935-f44336-43a047
 
 # Features
 
-- ### Responsive Logo
+ ### Responsive Logo
 
 <img src="assets/images/logo-responsiveness-1.jpg">
 <img src="assets/images/logo-responsiveness-2.jpg">
@@ -60,7 +60,7 @@ The top section of the website contains a responsive logo that will do two thing
 1. If you hover above the logo icon, you will see the logo rotate. This gives a subtle hint of extra responsiveness while navigating the website.
 2. Both the logo icon and the title allows the user to click it, taking the user back to the main landing page.
 
-- ### Responsive options
+### Responsive options
 
 <img src="assets/images/pvp-responsiveness-1.jpg">
 <img src="assets/images/pvp-responsiveness-2.jpg">
@@ -68,7 +68,36 @@ The top section of the website contains a responsive logo that will do two thing
 <img src="assets/images/how-to-responsiveness-1.jpg">
 <img src="assets/images/how-to-responsiveness-2.jpg">
 
-In the body of the main page,
+- In the body of the main page, hovering above the buttons "Player vs Player" and "How to play" will cause the button to rotate slightly and change to a lighter color. I believe that this gives more responsiveness to the website.
+
+### Responsive footer icons
+
+<img src="assets/images/footer-no-hover.jpg">
+<img src="assets/images/hover-over-github.jpg">
+<img src="assets/images/hover-over-linkedin.jpg">
+
+- In the footer section of the website, I have made the icons responsive for when a user hover aboves the icon. Clicking either of the icons takes the user to the creators webpage of the website that the user clicks into.
+
+### How to play section
+
+<img src="assets/images/how-to-play.jpg">
+
+- If the user click "How to play" a responsive pop up modal box will appear to give the user instructions on how to play the game. To exit the box, the user can simply click anywhere outside of the box or click the "X" button on the top-right side of the pop up box.
+
+### The game
+Below will display the responsiveness of the game:
+- Before placing either "X" or "O" inside of the cells, the user will be able to see where they will be placing their marker as it will show up in a lighter color.
+- Once they place their marker the mark will become a darker color and the user will not be able to place any thing inside of that cell for the remainder of the game.
+
+<img src="assets/images/hover-x.jpg">
+<img src="assets/images/place-x.jpg">
+
+- When the game if over, a pop up box will appear to notify the users who has won the game.
+- It will also give the users the option to play again.
+
+<img src="assets/images/x-win.jpg">
+<img src="assets/images/o-win.jpg">
+<img src="assets/images/player-draw.jpg">
 
 One issue during the creation stage was that I was not able to see the game fully playing out as I expected it to. I tried changing keywords and functions around on the "script.js" file.
 I managed to fix this issue by moving the whole "// Modal pop up box for the 'How to play' section" from the top of the script.js file to the bottom. After moving this and creating a separate file for the javascript functions, I was able to see my fully functioning code for both the modal pop up box and the game finally worked.
