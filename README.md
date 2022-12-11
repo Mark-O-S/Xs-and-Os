@@ -30,6 +30,7 @@ This is my JavaScript project of Tic Tac Toe. A fun game where 2 players can tak
     - [Known Bugs](#known-bugs)
     - [Performance Test](#performance-test)
 - [Deployment](#deployment)
+- [Credits](#credits)
 
 <!-- Table of Contents finish -->
 
@@ -196,8 +197,6 @@ The **CSS** of the website was tested using the **[CSS Validator](https://jigsaw
 ## Known Bugs
 To my knowledge, there are currently no bugs present in the website.
 
-[Back to Table of Contents](https://github.com/Mark-O-S/Xs-and-Os#table-of-contents)
-
 ## Performance Test
 I am delighted with my result using the Lighthouse feature in Google Chrome's developer tools.
 
@@ -225,4 +224,28 @@ Github was used to create and deploy this website. The following are the series 
 8. The page should then refresh and a link will be created which will take you to your live page inside the Github Pages! The link to my live Github page is **[here!](https://mark-o-s.github.io/Xs-and-Os/)**
 
 [Back to Table of Contents](https://github.com/Mark-O-S/Xs-and-Os#table-of-contents)
+
+# Credits
+
+## Code
+- I used some code that was similar to [study tonight website](https://www.studytonight.com/post/building-a-tic-tac-toe-game-in-javascript).
+- I used code that was similar to [SourceCodeExamples](https://www.sourcecodeexamples.net/2020/09/javascript-tic-tac-toe-game.html). 
+
+- I was able to understand more about CSS Transform propert from [w3schools](https://www.w3schools.com/cssref/css3_pr_transform.php).
+
+- I was able to understand more about creating vertical buttons from [w3schools](https://www.w3schools.com/howto/howto_css_button_group_vertical.asp).
+
+
+
+## Design and Contents
+- Wireframes were made using [Balsamiq](https://balsamiq.com/wireframes/).
+- Choosing colours was made easier to me by using [Color Tool](https://m2.material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=CDDC39&secondary.color=880E4F&primary.text.color=000000) and [Coolors](https://coolors.co/000000-ffffff-4fc3f7-e53935-f44336-43a047-4caf50).
+- I was able to use different fonts from [Google Fonts](https://fonts.google.com/).
+- The icons used for the logo of the footer came from [Font Awesome](https://fontawesome.com/).
+- The icon used for the title logo came from [flaticon](https://www.flaticon.com/free-icon/tic-tac-toe_1191185?related_id=1191185&origin=search).
+
+## Other Acknowledgements
+I am glad that I have resources from the Code Institute Slack community, looking back at other content posted, I could see that I was not the only one having the same issues with projects or coursework. That gives me a slight relief when it comes to my learning.
+
+**[Back to Table of Contents](https://github.com/Mark-O-S/Xs-and-Os#table-of-contents)**
 
