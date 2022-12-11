@@ -26,27 +26,23 @@ I used [Balsamiq](https://balsamiq.com/wireframes/) in order to create the wirfr
 
 ### Main Page
 
-<img src="assets/images/desktop-wf-1.jpg">
-
-<img src="assets/images/mobile-wf-1.jpg">
+<img src="assets/images/wireframes/desktop-wf-1.jpg">
+<img src="assets/images/wireframes/mobile-wf-1.jpg">
 
 ### How to Play Section
 
-<img src="assets/images/desktop-wf-2.jpg">
-
-<img src="assets/images/mobile-wf-2.jpg">
+<img src="assets/images/wireframes/desktop-wf-2.jpg">
+<img src="assets/images/wireframes/mobile-wf-2.jpg">
 
 ### Game Section
 
-<img src="assets/images/desktop-wf-3.jpg">
-
-<img src="assets/images/mobile-wf-3.jpg">
+<img src="assets/images/wireframes/desktop-wf-3.jpg">
+<img src="assets/images/wireframes/mobile-wf-3.jpg">
 
 ### Game Result Section
 
-<img src="assets/images/desktop-wf-4.jpg">
-
-<img src="assets/images/mobile-wf-4.jpg">
+<img src="assets/images/wireframes/desktop-wf-4.jpg">
+<img src="assets/images/wireframes/mobile-wf-4.jpg">
 
 One issue during the creation stage was that I was not able to see the game fully playing out as I expected it to. I tried changing keywords and functions around on the "script.js" file.
 I managed to fix this issue by moving the whole "// Modal pop up box for the 'How to play' section" from the top of the script.js file to the bottom. After moving this and creating a separate file for the javascript functions, I was able to see my fully functioning code for both the modal pop up box and the game finally worked.
