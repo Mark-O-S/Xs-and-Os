@@ -185,5 +185,9 @@ To my knowledge, there are currently no bugs present in the website.
 
 [Back to Table of Contents](https://github.com/Mark-O-S/Xs-and-Os#table-of-contents)
 
+## Performance Test
+I am delighted with my result using the Lighthouse feature in Google Chrome's developer tools.
+
+<img src="assets/images/performance-test.jpg">
 
 [Back to Table of Contents](https://github.com/Mark-O-S/Xs-and-Os#table-of-contents)
