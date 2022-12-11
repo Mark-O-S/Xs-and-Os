@@ -357,9 +357,17 @@ li a:hover {
     height: auto;
 }
 
+/* Media Query for screen sizes up to 750px */
+@media screen and (max-width: 750px) {
+    .winning-msg {
+        font-size: 3.5rem;
+    }
+}
+
 /* Media Query for screen sizes below 450px */
 @media screen and (max-width: 450px) {
     .winning-msg {
         font-size: 2rem;
     }
 }
+
