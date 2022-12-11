@@ -60,6 +60,15 @@ The top section of the website contains a responsive logo that will do two thing
 1. If you hover above the logo icon, you will see the logo rotate. This gives a subtle hint of extra responsiveness while navigating the website.
 2. Both the logo icon and the title allows the user to click it, taking the user back to the main landing page.
 
+- ### Responsive options
+
+<img src="assets/images/pvp-responsiveness-1.jpg">
+<img src="assets/images/pvp-responsiveness-2.jpg">
+
+<img src="assets/images/how-to-responsiveness-1.jpg">
+<img src="assets/images/how-to-responsiveness-2.jpg">
+
+In the body of the main page,
 
 One issue during the creation stage was that I was not able to see the game fully playing out as I expected it to. I tried changing keywords and functions around on the "script.js" file.
 I managed to fix this issue by moving the whole "// Modal pop up box for the 'How to play' section" from the top of the script.js file to the bottom. After moving this and creating a separate file for the javascript functions, I was able to see my fully functioning code for both the modal pop up box and the game finally worked.
