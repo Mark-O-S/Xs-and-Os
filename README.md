@@ -16,6 +16,7 @@ This is my JavaScript project of Tic Tac Toe. A fun game where 2 players can tak
     - [Colour Scheme](#colour-scheme)
 - [Features](#features)
 - [Technologies Used](#technologies-used)   
+- [Testing](#testing)
 
 <!-- Table of Contents finish -->
 
@@ -61,6 +62,8 @@ I used [Balsamiq](https://balsamiq.com/wireframes/) in order to create the wirfr
 I used [Coolors.co](https://coolors.co/000000-ffffff-4fc3f7-e53935-f44336-43a047-4caf50) for choosing the colour scheme of the website.
 
 <img src="assets/images/color-scheme.jpg">
+
+[Back to Table of Contents](https://github.com/Mark-O-S/Xs-and-Os#table-of-contents)
 
 # Features
 
@@ -117,6 +120,8 @@ Below will display the responsiveness of the game:
 - I would like to add a sound effect for each time a user places their mark on the cell and different sound effects for when the game is won, lost or if it's a draw.
 - I would like to add a score card underneath the game in the event that games are played multiple times and if the user(s) wanted to keep track of their scores.
 
+[Back to Table of Contents](https://github.com/Mark-O-S/Xs-and-Os#table-of-contents)
+
 # Technologies Used
 The following list are the types of technologies used in the creation of this website:
 - **[HTML5](https://en.wikipedia.org/wiki/HTML5)** (HyperText Markup Language) was used in creating the core content of the website.
@@ -129,11 +134,56 @@ The following list are the types of technologies used in the creation of this we
 - **[TinyPNG](https://tinypng.com/)** was used to compress any image that was used for the website.
 - **[Coolors.co](https://coolors.co/000000-ffffff-4fc3f7-e53935-f44336-43a047-4caf50)** was used for choosing the colors for the website.
 
-One issue during the creation stage was that I was not able to see the game fully playing out as I expected it to. I tried changing keywords and functions around on the "script.js" file.
-I managed to fix this issue by moving the whole "// Modal pop up box for the 'How to play' section" from the top of the script.js file to the bottom. After moving this and creating a separate file for the javascript functions, I was able to see my fully functioning code for both the modal pop up box and the game finally worked.
-I am still not sure as to why I have to separate these files and codes however.
+[Back to Table of Contents](https://github.com/Mark-O-S/Xs-and-Os#table-of-contents)
 
-Resolved an error from the HTML validator which pointed out that I had nested an anchor tag element inside of a button element. 
-To resolve this issue, i removed the anchor tag and added an onclick attribute so that the button remains functioning as intended
+# Testing
 
-[Back to Table of Contents]()
+## Cross-browser Testing
+The website was tested across 3 web browsers:
+- Google Chrome - no issues detected
+- Microsoft Edge - no issues detected
+- Mozzilla Firefox - no issues detected
+
+## Compatibility Testing 
+The website and game was tested across the following devices:
+- 15" Screen, Dell Laptop - no issues detected
+- Samsung Galaxy S10+ Mobile phone - no issues detected
+- Computer with 27" screen - no issues detected
+
+## Responsive Testing
+- One issue arose during the creation stage was that I was not able to see the game fully playing out as I expected it to. 
+- I changed keywords and functions around on the "script.js" file.
+- I managed to fix this issue by moving the code "// Modal pop up box for the 'How to play' section". 
+- After moving this and creating a separate file for the javascript functions, I was able to see my fully functioning code for both the modal pop up box and the game finally worked.
+- I am still not sure as to why I have to separate these files and codes however.
+
+Other than the modal pop up box issue, I encountered no further responsive test issue.
+
+## Validator Testing
+The **HTML** of the website was tested using the **[HTML Validator](https://validator.w3.org/)**.
+- I encountered *one* error which pointed out that I had nested an anchor tag element inside of a button element. 
+
+<img src="assets/images/index.html-error.jpg">
+
+- To resolve this issue, i removed the anchor tag and added an onclick attribute so that the button remains functioning as intended.
+
+<img src="assets/images/resolved.jpg">
+
+The **CSS** of the website was tested using the **[CSS Validator](https://jigsaw.w3.org/css-validator/)**
+
+- No issues found when tested
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
+
+## Known Bugs
+To my knowledge, there are currently no bugs present in the website.
+
+[Back to Table of Contents](https://github.com/Mark-O-S/Xs-and-Os#table-of-contents)
+
+
+[Back to Table of Contents](https://github.com/Mark-O-S/Xs-and-Os#table-of-contents)
