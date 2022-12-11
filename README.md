@@ -6,6 +6,19 @@ This is my JavaScript project of Tic Tac Toe. A fun game where 2 players can tak
 
 ![multi-device image](assets/images/device-views.jpg)
 
+<!-- Table of Contents start -->
+
+# *Table of Contents*
+- [UX & Design](#ux--design)
+    - [User Goals](#user-goals)
+    - [User Stories](#user-stories)
+    - [Wireframes](#wireframes)
+    - [Colour Scheme](#colour-scheme)
+- [Features](#features)
+- [Technologies Used](#technologies-used)   
+
+<!-- Table of Contents finish -->
+
 # UX & Design
 The website has two pages. The first page, to give the user the option to have a look at how to play the game along and the second page to play the game.
 
@@ -122,3 +135,5 @@ I am still not sure as to why I have to separate these files and codes however.
 
 Resolved an error from the HTML validator which pointed out that I had nested an anchor tag element inside of a button element. 
 To resolve this issue, i removed the anchor tag and added an onclick attribute so that the button remains functioning as intended
+
+[Back to Table of Contents]()
