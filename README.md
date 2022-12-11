@@ -191,3 +191,23 @@ I am delighted with my result using the Lighthouse feature in Google Chrome's de
 <img src="assets/images/performance-test.jpg">
 
 [Back to Table of Contents](https://github.com/Mark-O-S/Xs-and-Os#table-of-contents)
+
+# Deployment
+Github was used to create and deploy this website. The following are the series of steps to take to deploy this website on **Github Pages**:
+1. Visit [Github](https://github.com/), login to your account.
+2. Once you have signed in to your account, click the icon on the top right corner of your screen and click the dropdown menu that says **"Your repositories"**. This will take you to your repository page.
+3. When you arrive at your repository page, click the repository that you want to publish.
+4. Once you click your repository and arrive to that page, you should see the following:
+- Issues
+- Pull requests
+- Actions
+- Projects
+- Wiki
+- Security
+- Insights
+- Settings
+5. From this list, there is a settings button. Click on **"Settings"**
+6. Once you are in the settings menu, click on **"Pages"**
+7. Once you are in that section, below the **"Source"** heading. Ensure that the option says **"Deploy from a branch"**. Below that underneath the **"Branch"** heading, click the dropdown menu and select **"main"** and **"/root"**. Click **Save**
+8. The page should then refresh and a link will be created which will take you to your live page inside the Github Pages! The link to my live Github page is **[here!](https://mark-o-s.github.io/Xs-and-Os/)**
+
