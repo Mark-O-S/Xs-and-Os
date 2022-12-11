@@ -49,6 +49,18 @@ I used [Coolors.co](https://coolors.co/000000-ffffff-4fc3f7-e53935-f44336-43a047
 
 <img src="assets/images/color-scheme.jpg">
 
+# Features
+
+- ### Responsive Logo
+
+<img src="assets/images/logo-responsiveness-1.jpg">
+<img src="assets/images/logo-responsiveness-2.jpg">
+
+The top section of the website contains a responsive logo that will do two things if you hover and click it:
+1. If you hover above the logo icon, you will see the logo rotate. This gives a subtle hint of extra responsiveness while navigating the website.
+2. Both the logo icon and the title allows the user to click it, taking the user back to the main landing page.
+
+
 One issue during the creation stage was that I was not able to see the game fully playing out as I expected it to. I tried changing keywords and functions around on the "script.js" file.
 I managed to fix this issue by moving the whole "// Modal pop up box for the 'How to play' section" from the top of the script.js file to the bottom. After moving this and creating a separate file for the javascript functions, I was able to see my fully functioning code for both the modal pop up box and the game finally worked.
 I am still not sure as to why I have to separate these files and codes however.
