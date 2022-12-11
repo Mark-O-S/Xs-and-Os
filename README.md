@@ -15,8 +15,21 @@ This is my JavaScript project of Tic Tac Toe. A fun game where 2 players can tak
     - [Wireframes](#wireframes)
     - [Colour Scheme](#colour-scheme)
 - [Features](#features)
+    - [Responsive logo](#responsive-logo)
+    - [Responsive options](#responsive-options)
+    - [Responsive footer icons](#responsive-footer-icons)
+    - [How to play](#how-to-play-section)
+    - [The Game](#the-game)
+    - [Features to add in the future](#features-to-add-in-the-future)
 - [Technologies Used](#technologies-used)   
 - [Testing](#testing)
+    - [Cross-browser Testing](#cross-browser-testing)
+    - [Compatibility Testing](#compatibility-testing)
+    - [Responsive Testing](#responsive-testing)
+    - [Validator Testing](#validator-testing)
+    - [Known Bugs](#known-bugs)
+    - [Performance Test](#performance-test)
+- [Deployment](#deployment)
 
 <!-- Table of Contents finish -->
 
@@ -210,4 +223,6 @@ Github was used to create and deploy this website. The following are the series 
 6. Once you are in the settings menu, click on **"Pages"**
 7. Once you are in that section, below the **"Source"** heading. Ensure that the option says **"Deploy from a branch"**. Below that underneath the **"Branch"** heading, click the dropdown menu and select **"main"** and **"/root"**. Click **Save**
 8. The page should then refresh and a link will be created which will take you to your live page inside the Github Pages! The link to my live Github page is **[here!](https://mark-o-s.github.io/Xs-and-Os/)**
+
+[Back to Table of Contents](https://github.com/Mark-O-S/Xs-and-Os#table-of-contents)
 
