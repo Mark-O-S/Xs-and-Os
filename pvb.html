@@ -9,7 +9,7 @@
     <meta name="keywords" content="game, tic-tac-toe, player vs player, player vs bot, x's and o's">
     <meta name="author" content="Mark O'Sullivan">
 
-    <title>X's and O's</title>
+    <title>X's and O's PvP</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="favicon.ico">
     <script src="https://kit.fontawesome.com/0649e90160.js" crossorigin="anonymous"></script>
@@ -18,7 +18,7 @@
 <body>
     <!-- Logo heading -->
     <div class="center-section">
-        
+
         <a href="index.html" id="logo">
             <img class="logo-img" src="assets/images/tic-tac-toe-b&w.png" alt="tic tac toe image logo">
             <b>X's</b> and <b>O's</b>
@@ -26,42 +26,31 @@
         <p id="logo-description">A game of Tic Tac Toe</p>
     </div>
 
-    <!-- Options section -->
-    <div class="center-section">
+    <!-- Player vs Player game section -->
+    <div class="board" id="board">
+        <div class="cell" data-cell></div>
 
-        <div class="options">
-            <button class="options-btn" id="pvp-btn" onclick="location.href='pvp.html'">
-                <link rel="stylesheet" href="pvp.html" class="click-btn"> 
-                Player vs Player
-            </button>
-            
-            <button class="options-btn" id="pvb-btn" onclick="location.href='pvb.html'">
-                <link rel="#" href="#" class="#"> 
-                Player vs Bot
-            </button>
+        <div class="cell" data-cell></div>
 
-            <button data-modal-target="#modal" class="options-btn" id="how-to-btn">
-                How to play
-            </button>
+        <div class="cell" data-cell></div>
 
-            <div class="how-to-modal" id="modal">
-                <div class="how-to-modal-header">
+        <div class="cell" data-cell></div>
 
-                    <div class="how-to-title">HOW TO PLAY</div>
-                    <button data-close-button class="close-button">&times;</button>
+        <div class="cell" data-cell></div>
 
-                </div>
-                <div class="how-to-modal-body">
-                    Tic tac toe is an easy and fun to play 2 player game (or vs a bot). <br>
-                    "X" is the first player and "O" is the second player. <br>
-                    The board is made up of a 3 x 3 grid of squares, meaning that it has three rows of three squares. <br>
-                    Each player takes turn and has one move per turn, they must mark the board with their letter. <br>
-                    Whoever is the first that has 3 letters in a row is the winner!
-                </div>
-            </div>
-            <div id="how-to-overlay"></div>
+        <div class="cell" data-cell></div>
 
-        </div>
+        <div class="cell" data-cell></div>
+
+        <div class="cell" data-cell></div>
+
+        <div class="cell" data-cell></div>
+    </div>
+
+    <div class="winning-msg" id="winningMsg">
+
+        <div id="winningMsgText"></div>
+        <button id="restartButton">Play again!</button>
 
     </div>
 
@@ -74,14 +63,14 @@
                     aria-label="Click this link to visit Mark's Github profile(opens in a new tab">
                     <i class="fa-brands fa-github"></i>
                 </a>
-                
+
             </li>
             <li>
                 <a href="https://www.linkedin.com/in/mark-o-sullivan-592484191/" target="_blank" rel="noopener"
                     aria-label="Click this link to visit Mark's LinkedIn profile(opens in a new tab">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                
+
             </li>
 
         </ul>
@@ -90,7 +79,7 @@
 
     </footer>
 
-    <script src="assets/js/howtoplay.js"></script>
+    <script src="assets/js/game.js"></script>
 </body>
 
 </html>

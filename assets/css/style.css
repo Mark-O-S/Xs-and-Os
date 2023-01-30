@@ -22,7 +22,6 @@ body {
 }
 
 /* Logo section styling */
-
 .center-section {
     margin-top: 40px;
     padding: 10px;
@@ -59,7 +58,6 @@ body {
 }
 
 /* Options */ 
-
 .options {
     margin: 10px;
     padding: 30px;
@@ -115,7 +113,6 @@ body {
 }
 
 /* Create Player vs Player / Player vs Bot Game Board */
-
 .board {
     width: 100vw;
     height: 100vh;
@@ -139,7 +136,6 @@ body {
 }
 
 /* Remove the border edges of the board */
-
 .cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3) {
@@ -161,15 +157,12 @@ body {
 }
 
 /* When 'X' or 'O' is already filled */
-
 .cell.x,
 .cell.circle {
     cursor: not-allowed;
 }
 
 /* Create player 'X' */
-
-
 .cell.x::before,
 .cell.x::after,
 .cell.circle::before {
@@ -204,7 +197,6 @@ body {
 }
 
 /* Create player 'O' */
-
 .cell.circle::before,
 .cell.circle::after,
 .board.circle .cell:not(.x):not(.circle):hover::before,
@@ -228,7 +220,6 @@ body {
 }
 
 /* Winning message */
-
 .winning-msg {
     display: none;
     position: fixed;
@@ -334,7 +325,6 @@ body {
 }
 
 /* Footer content */
-
 footer {
     padding: 10px;
     margin-top: 40px;
@@ -380,4 +370,3 @@ li a:hover {
         font-size: 2rem;
     }
 }
-

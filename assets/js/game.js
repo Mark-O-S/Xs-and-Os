@@ -1,6 +1,5 @@
-// Create variable for player 'X' and player 'O'
+// Create variable for player 'X' and player 'Circle'
 // Set rule to win the game 
-
 const PLAYER_X = 'x';
 const PLAYER_CIRCLE = 'circle';
 const WINNING_COMBO = [
@@ -14,7 +13,7 @@ const WINNING_COMBO = [
     [2, 4, 6]
 ];
 
-// Target data-row attribute with square bracket
+// Target data-cell attribute with square bracket
 // Target the following attributes
 const cellElements = document.querySelectorAll('[data-cell]');
 const boardElement = document.getElementById('board');
@@ -23,13 +22,12 @@ const winningMessageText = document.getElementById('winningMsgText');
 const restartButton = document.getElementById('restartButton');
 
 // Start game function
-
 let circleFirst;
 
 startGame();
 
 restartButton.addEventListener('click', startGame);
-
+//Set up the board for a new game
 function startGame() {
     circleFirst = false;
     cellElements.forEach(cell => {
@@ -44,6 +42,8 @@ function startGame() {
     winningMessage.classList.remove('show');
 }
 
+// Check if player has clicked a cell
+// Note to self: Change this functions for the bot code for tomorrow
 function handleCellClick(e) {
     const cell = e.target;
     const currentPlayer = circleFirst ? PLAYER_CIRCLE : PLAYER_X;
@@ -60,7 +60,6 @@ function handleCellClick(e) {
 }
 
 // End game function
-
 function endGame(draw) {
     if (draw) {
         winningMessageText.innerText = "It's a draw!";
@@ -71,7 +70,6 @@ function endGame(draw) {
 }
 
 // Game function if it's a draw
-
 function isaDraw() {
     return [...cellElements].every(cell => {
         return cell.classList.contains(PLAYER_X) || cell.classList.contains(PLAYER_CIRCLE);
@@ -79,13 +77,11 @@ function isaDraw() {
 }
 
 // Place Mark function
-
 function placeMark(cell, currentPlayer) {
     cell.classList.add(currentPlayer);
 }
 
 // Move to next player after each turn
-
 function nextTurn() {
     circleFirst = !circleFirst;
 }
@@ -100,6 +96,7 @@ function setBoardHoverClass() {
     }
 }
 
+// Check if the current player has won the game
 function checkWin(currentPlayer) {
     return WINNING_COMBO.some(combination => {
         return combination.every(index => {
