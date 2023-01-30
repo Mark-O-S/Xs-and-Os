@@ -87,6 +87,16 @@ body {
     color: #ffffff;
 }
 
+#pvb-btn {
+    background-color: #FF8C00;
+    color: #ffffff;
+}
+
+#pvb-btn:hover {
+    background-color: #FFA500;
+    color: #ffffff;
+}
+
 #pvp-btn:hover {
     background-color: #f44336;
 }
