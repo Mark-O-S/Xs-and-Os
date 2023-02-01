@@ -60,7 +60,7 @@ function handleCellClick(e) {
     const freeCells = getNumberOfFreeCells();
     const randomCell = Math.floor(Math.random() * freeCells.length);
     const botCell = freeCells[randomCell]
-    const botPlayer = "o";
+    const botPlayer = "bot";
     placeMark(botCell, PLAYER_CIRCLE);
     
     if (checkWin(PLAYER_CIRCLE)) {
@@ -90,7 +90,7 @@ function endGame(draw, player) {
     if (draw) {
         winningMessageText.innerText = "It's a draw!";
     } else {
-        winningMessageText.innerText = `Player ${player.toUpperCase()} Wins!`;
+        winningMessageText.innerText = `${player.toUpperCase()} Wins!`;
     }
     winningMessage.classList.add('show');
 }

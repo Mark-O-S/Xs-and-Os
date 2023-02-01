@@ -112,10 +112,28 @@ body {
     color: #ffffff;
 }
 
+#back-to-menu-btn {
+    padding: 6px;
+    margin: 3px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 2px solid #000000;
+    border-radius: 12px;
+    background-color: #f44336;
+}
+
+#back-to-menu-btn:hover {
+    background-color: #4caf50;
+}
+
+#back-to-menu {
+    color: #000000;
+}
+
 /* Create Player vs Player / Player vs Bot Game Board */
 .board {
     width: 100vw;
-    height: 100vh;
+    height: 50vh;
     display: grid;
     grid-template-columns: repeat(3, auto);
     justify-content: center;

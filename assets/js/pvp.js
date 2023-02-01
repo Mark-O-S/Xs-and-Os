@@ -64,7 +64,7 @@ function endGame(draw) {
     if (draw) {
         winningMessageText.innerText = "It's a draw!";
     } else {
-        winningMessageText.innerText = `Player ${circleFirst ? 'O' : 'X'} Wins!`;
+        winningMessageText.innerText = `${circleFirst ? 'O' : 'X'} Wins!`;
     }
     winningMessage.classList.add('show');
 }
