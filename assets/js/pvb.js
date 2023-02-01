@@ -57,18 +57,20 @@ function handleCellClick(e) {
     // Bot is going to take their turn now
     // Use the rand function to generate a random available position for the bot to place their shape on the board
     // freecells is a list of the cell indices that are available e.g. [2,5,8]
-    const freeCells = getNumberOfFreeCells();
-    const randomCell = Math.floor(Math.random() * freeCells.length);
-    const botCell = freeCells[randomCell]
-    const botPlayer = "bot";
-    placeMark(botCell, PLAYER_CIRCLE);
-    
-    if (checkWin(PLAYER_CIRCLE)) {
-        endGame(false, botPlayer);
-    } else if (isaDraw()) {
-        endGame(true, botPlayer);
-    } else {
-        setBoardHoverClass();
+    if (!winningMessage.classList.contains('show')) {
+        const freeCells = getNumberOfFreeCells();
+        const randomCell = Math.floor(Math.random() * freeCells.length);
+        const botCell = freeCells[randomCell]
+        const botPlayer = "bot";
+        placeMark(botCell, PLAYER_CIRCLE);
+        
+        if (checkWin(PLAYER_CIRCLE)) {
+            endGame(false, botPlayer);
+        } else if (isaDraw()) {
+            endGame(true, botPlayer);
+        } else {
+            setBoardHoverClass();
+        }
     }
 }
 
