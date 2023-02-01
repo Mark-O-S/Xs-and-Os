@@ -22,14 +22,12 @@ const winningMessageText = document.getElementById('winningMsgText');
 const restartButton = document.getElementById('restartButton');
 
 // Start game function
-let circleFirst;
 
 startGame();
 
 restartButton.addEventListener('click', startGame);
 //Set up the board for a new game
 function startGame() {
-    circleFirst = false;
     cellElements.forEach(cell => {
         cell.classList.remove(PLAYER_X);
         cell.classList.remove(PLAYER_CIRCLE);
@@ -43,16 +41,15 @@ function startGame() {
 }
 
 // Check if player has clicked a cell
-// Note to self: Change this functions for the bot code for tomorrow
 function handleCellClick(e) {
     const cell = e.target;
-    const currentPlayer = circleFirst ? PLAYER_CIRCLE : PLAYER_X;
+    const currentPlayer = PLAYER_X;
     placeMark(cell, currentPlayer);
 
     if (checkWin(currentPlayer)) {
-        endGame(false);
+        endGame(false, currentPlayer);
     } else if (isaDraw()) {
-        endGame(true);
+        endGame(true, currentPlayer);
     } else {
         setBoardHoverClass();
     }
@@ -63,13 +60,13 @@ function handleCellClick(e) {
     const freeCells = getNumberOfFreeCells();
     const randomCell = Math.floor(Math.random() * freeCells.length);
     const botCell = freeCells[randomCell]
-    const botPlayer = PLAYER_CIRCLE;
-    placeMark(botCell, botPlayer);
+    const botPlayer = "o";
+    placeMark(botCell, PLAYER_CIRCLE);
     
-    if (checkWin(botPlayer)) {
-        endGame(false);
+    if (checkWin(PLAYER_CIRCLE)) {
+        endGame(false, botPlayer);
     } else if (isaDraw()) {
-        endGame(true);
+        endGame(true, botPlayer);
     } else {
         setBoardHoverClass();
     }
@@ -89,11 +86,11 @@ function getNumberOfFreeCells() {
 
 // Note to self - Fix issue that Player O keeps winning
 // End game function
-function endGame(draw) {
+function endGame(draw, player) {
     if (draw) {
         winningMessageText.innerText = "It's a draw!";
     } else {
-        winningMessageText.innerText = `Player ${circleFirst ? 'X' : 'O'} Wins!`;
+        winningMessageText.innerText = `Player ${player.toUpperCase()} Wins!`;
     }
     winningMessage.classList.add('show');
 }
@@ -113,11 +110,7 @@ function placeMark(cell, currentPlayer) {
 function setBoardHoverClass() {
     boardElement.classList.remove(PLAYER_X);
     boardElement.classList.remove(PLAYER_CIRCLE);
-    if (circleFirst) {
-        boardElement.classList.add(PLAYER_CIRCLE);
-    } else {
-        boardElement.classList.add(PLAYER_X);
-    }
+    boardElement.classList.add(PLAYER_X);
 }
 
 // Check if the current player has won the game
