@@ -4,6 +4,8 @@ const PLAYER_X = 'x';
 const PLAYER_CIRCLE = 'circle';
 const PLAYER_ONE = 'Player 1';
 const PLAYER_TWO = 'Player 2';
+const PLAYER_ONE_SCORE_TAG_ID = 'player1-score'
+const PLAYER_TWO_SCORE_TAG_ID = 'player2-score'
 const WINNING_COMBO = [
     [0, 1, 2],
     [3, 4, 5],
@@ -22,6 +24,8 @@ const boardElement = document.getElementById('board');
 const winningMessage = document.getElementById('winningMsg');
 const winningMessageText = document.getElementById('winningMsgText');
 const restartButton = document.getElementById('restartButton');
+let playerOneScore = document.getElementById('player1-score');
+let playerTwoScore = document.getElementById('player2-score');
 
 // Start game function
 let circleFirst;
@@ -71,16 +75,26 @@ function validateplayerNameUserInput (playerName) {
     return validPlayerName
 }
 
+// Update the player winning score
+function updatePlayerWinScore(playerScoreTagID) {
+    var currentScore = Number(document.getElementById(playerScoreTagID).innerHTML);
+    currentScore += 1
+    document.getElementById(playerScoreTagID).innerHTML = currentScore
+}
+
 // End game function
 function endGame(draw) {
-    
+    const playerOneName = validateplayerNameUserInput(document.getElementById('player1').value);
+    const playerTwoName = validateplayerNameUserInput(document.getElementById('player2').value);
+    const playerWinner = circleFirst ? playerTwoName : playerOneName
     if (draw) {
         winningMessageText.innerText = "It's a draw!";
     } else {
-        let playerOneName = validateplayerNameUserInput(document.getElementById('player1').value);
-        let playerTwoName = validateplayerNameUserInput(document.getElementById('player2').value);
-        winningMessageText.innerText = `${circleFirst ? playerTwoName : playerOneName} Wins!`;
+        
+        winningMessageText.innerText = `${playerWinner} Wins!`;
     }
+    const playerScoreTagID = circleFirst ? PLAYER_TWO_SCORE_TAG_ID : PLAYER_ONE_SCORE_TAG_ID
+    updatePlayerWinScore(playerScoreTagID)
     winningMessage.classList.add('show');
 }
 

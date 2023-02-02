@@ -131,7 +131,7 @@ body {
 }
 
 /* Create Player name section */
-#player-section {
+.player-section {
     margin: 20px;
     padding: 10px;
     align-items: center;
