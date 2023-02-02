@@ -140,11 +140,14 @@ body {
 }
 
 #player1 {
-    margin-right: 60px;
     padding: 10px;
     border: 2px solid #000000;
     border-radius: 12px;
     font-weight: bold;
+}
+
+#player1-score {
+    margin-right: 60px;
 }
 
 #player2 {
