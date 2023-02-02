@@ -24,8 +24,6 @@ const boardElement = document.getElementById('board');
 const winningMessage = document.getElementById('winningMsg');
 const winningMessageText = document.getElementById('winningMsgText');
 const restartButton = document.getElementById('restartButton');
-let playerOneScore = document.getElementById('player1-score');
-let botScore = document.getElementById('bot-score');
 
 // Start game function
 
@@ -71,7 +69,7 @@ function handleCellClick(e) {
     if (!winningMessage.classList.contains('show')) {
         const freeCells = getNumberOfFreeCells();
         const randomCell = Math.floor(Math.random() * freeCells.length);
-        const botCell = freeCells[randomCell]
+        const botCell = freeCells[randomCell];
         placeMark(botCell, PLAYER_CIRCLE);
         
         if (checkWin(PLAYER_CIRCLE)) {
@@ -90,7 +88,7 @@ function getNumberOfFreeCells() {
     // Get all the cells that have class as cell, meaning it is an available cell
     cellElements.forEach(cell => {
         if (!cell.classList.contains(PLAYER_X) && !cell.classList.contains(PLAYER_CIRCLE)) {
-            freeCells.push(cell)
+            freeCells.push(cell);
         }
     });
     return freeCells;
@@ -99,17 +97,17 @@ function getNumberOfFreeCells() {
 // Validate the input the user enters for the player name
 // Checks the user input must be less than 11 characters, is a string type and is not an empty string
 function validatePlayerNameUserInput (playerName) {
-    validPlayerName = PLAYER_ONE;
+    let validPlayerName = PLAYER_ONE;
     if (playerName !== "" && playerName.length < 11 && typeof playerName === 'string') {
-        validPlayerName = playerName
+        validPlayerName = playerName;
     }
-    return validPlayerName
+    return validPlayerName;
 }
 
 // Update the player winning score
 function updatePlayerWinScore(playerScoreTagID) {
     var currentScore = Number(document.getElementById(playerScoreTagID).innerHTML);
-    currentScore += 1
+    currentScore += 1;
     document.getElementById(playerScoreTagID).innerHTML = currentScore
 }
 
@@ -124,8 +122,8 @@ function endGame(draw, isABot) {
     } else {
         winningMessageText.innerText = `${playerWinner} Wins!`;
     }
-    const playerScoreTagID = isABot ? BOT_SCORE_TAG_ID : PLAYER_ONE_SCORE_TAG_ID
-    updatePlayerWinScore(playerScoreTagID)
+    const playerScoreTagID = isABot ? BOT_SCORE_TAG_ID : PLAYER_ONE_SCORE_TAG_ID;
+    updatePlayerWinScore(playerScoreTagID);
     winningMessage.classList.add('show');
 }
 

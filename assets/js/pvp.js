@@ -24,8 +24,6 @@ const boardElement = document.getElementById('board');
 const winningMessage = document.getElementById('winningMsg');
 const winningMessageText = document.getElementById('winningMsgText');
 const restartButton = document.getElementById('restartButton');
-let playerOneScore = document.getElementById('player1-score');
-let playerTwoScore = document.getElementById('player2-score');
 
 // Start game function
 let circleFirst;
@@ -67,33 +65,33 @@ function handleCellClick(e) {
 // Validate the input the user enters for the player name
 // Checks the user input must be less than 11 characters, is a string type and is not an empty string
 function validateplayerNameUserInput (playerName) {
-    validPlayerName = circleFirst ? PLAYER_TWO : PLAYER_ONE;
+    let validPlayerName = circleFirst ? PLAYER_TWO : PLAYER_ONE;
     if (playerName !== "" && playerName.length < 11 && typeof playerName === 'string') {
-        validPlayerName = playerName
+        validPlayerName = playerName;
     }
-    return validPlayerName
+    return validPlayerName;
 }
 
 // Update the player winning score
 function updatePlayerWinScore(playerScoreTagID) {
     var currentScore = Number(document.getElementById(playerScoreTagID).innerHTML);
-    currentScore += 1
-    document.getElementById(playerScoreTagID).innerHTML = currentScore
+    currentScore += 1;
+    document.getElementById(playerScoreTagID).innerHTML = currentScore;
 }
 
 // End game function
 function endGame(draw) {
     const playerOneName = validateplayerNameUserInput(document.getElementById('player1').value);
     const playerTwoName = validateplayerNameUserInput(document.getElementById('player2').value);
-    const playerWinner = circleFirst ? playerTwoName : playerOneName
+    const playerWinner = circleFirst ? playerTwoName : playerOneName;
     if (draw) {
         winningMessageText.innerText = "It's a draw!";
     } else {
         
         winningMessageText.innerText = `${playerWinner} Wins!`;
     }
-    const playerScoreTagID = circleFirst ? PLAYER_TWO_SCORE_TAG_ID : PLAYER_ONE_SCORE_TAG_ID
-    updatePlayerWinScore(playerScoreTagID)
+    const playerScoreTagID = circleFirst ? PLAYER_TWO_SCORE_TAG_ID : PLAYER_ONE_SCORE_TAG_ID;
+    updatePlayerWinScore(playerScoreTagID);
     winningMessage.classList.add('show');
 }
 
