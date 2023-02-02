@@ -20,6 +20,8 @@ const boardElement = document.getElementById('board');
 const winningMessage = document.getElementById('winningMsg');
 const winningMessageText = document.getElementById('winningMsgText');
 const restartButton = document.getElementById('restartButton');
+var playerOneName = document.getElementById('player1').value;
+var playerTwoName = document.getElementById('player2').value;
 
 // Start game function
 let circleFirst;
@@ -64,7 +66,8 @@ function endGame(draw) {
     if (draw) {
         winningMessageText.innerText = "It's a draw!";
     } else {
-        winningMessageText.innerText = `${circleFirst ? 'O' : 'X'} Wins!`;
+        
+        winningMessageText.innerText = `${circleFirst ? playerTwoName : playerOneName} Wins!`;
     }
     winningMessage.classList.add('show');
 }
@@ -104,8 +107,3 @@ function checkWin(currentPlayer) {
         });
     });
 }
-
-// Name player
-var player = document.createElement("input");
-player.type = "text"
-player.value = "default"
