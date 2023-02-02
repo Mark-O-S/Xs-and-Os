@@ -104,3 +104,8 @@ function checkWin(currentPlayer) {
         });
     });
 }
+
+// Name player
+var player = document.createElement("input");
+player.type = "text"
+player.value = "default"

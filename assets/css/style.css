@@ -130,6 +130,31 @@ body {
     color: #000000;
 }
 
+/* Create Player name section */
+#player-section {
+    margin: 20px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#player1 {
+    margin-right: 60px;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+#player2 {
+    margin-left: 60px;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
 /* Create Player vs Player / Player vs Bot Game Board */
 .board {
     width: 100vw;
