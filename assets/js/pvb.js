@@ -2,6 +2,10 @@
 // Set rule to win the game 
 const PLAYER_X = 'x';
 const PLAYER_CIRCLE = 'circle';
+const PLAYER_ONE = 'Player 1';
+const BOT_NAME = 'Bot';
+const PLAYER_ONE_SCORE_TAG_ID = 'player1-score';
+const BOT_SCORE_TAG_ID = 'bot-score';
 const WINNING_COMBO = [
     [0, 1, 2],
     [3, 4, 5],
@@ -20,6 +24,8 @@ const boardElement = document.getElementById('board');
 const winningMessage = document.getElementById('winningMsg');
 const winningMessageText = document.getElementById('winningMsgText');
 const restartButton = document.getElementById('restartButton');
+let playerOneScore = document.getElementById('player1-score');
+let botScore = document.getElementById('bot-score');
 
 // Start game function
 
@@ -47,9 +53,9 @@ function handleCellClick(e) {
     placeMark(cell, currentPlayer);
 
     if (checkWin(currentPlayer)) {
-        endGame(false, currentPlayer);
+        endGame(false, false);
     } else if (isaDraw()) {
-        endGame(true, currentPlayer);
+        endGame(true, false);
     } else {
         setBoardHoverClass();
     }
@@ -65,9 +71,9 @@ function handleCellClick(e) {
         placeMark(botCell, PLAYER_CIRCLE);
         
         if (checkWin(PLAYER_CIRCLE)) {
-            endGame(false, botPlayer);
+            endGame(false, true);
         } else if (isaDraw()) {
-            endGame(true, botPlayer);
+            endGame(true, true);
         } else {
             setBoardHoverClass();
         }
@@ -86,14 +92,37 @@ function getNumberOfFreeCells() {
     return freeCells;
 }
 
+// Validate the input the user enters for the player name
+// Checks the user input must be less than 11 characters, is a string type and is not an empty string
+function validatePlayerNameUserInput (playerName) {
+    validPlayerName = PLAYER_ONE;
+    if (playerName !== "" && playerName.length < 11 && typeof playerName === 'string') {
+        validPlayerName = playerName
+    }
+    return validPlayerName
+}
+
+// Update the player winning score
+function updatePlayerWinScore(playerScoreTagID) {
+    var currentScore = Number(document.getElementById(playerScoreTagID).innerHTML);
+    currentScore += 1
+    document.getElementById(playerScoreTagID).innerHTML = currentScore
+}
+
 // Note to self - Fix issue that Player O keeps winning
 // End game function
-function endGame(draw, player) {
+function endGame(draw, isABot) {
+    let playerWinner = BOT_NAME;
+    if (!isABot) {
+        playerWinner = validatePlayerNameUserInput(document.getElementById('player1').value);
+    }
     if (draw) {
         winningMessageText.innerText = "It's a draw!";
     } else {
-        winningMessageText.innerText = `${player.toUpperCase()} Wins!`;
+        winningMessageText.innerText = `${playerWinner} Wins!`;
     }
+    const playerScoreTagID = isABot ? BOT_SCORE_TAG_ID : PLAYER_ONE_SCORE_TAG_ID
+    updatePlayerWinScore(playerScoreTagID)
     winningMessage.classList.add('show');
 }
 

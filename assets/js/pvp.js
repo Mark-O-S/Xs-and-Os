@@ -4,8 +4,8 @@ const PLAYER_X = 'x';
 const PLAYER_CIRCLE = 'circle';
 const PLAYER_ONE = 'Player 1';
 const PLAYER_TWO = 'Player 2';
-const PLAYER_ONE_SCORE_TAG_ID = 'player1-score'
-const PLAYER_TWO_SCORE_TAG_ID = 'player2-score'
+const PLAYER_ONE_SCORE_TAG_ID = 'player1-score';
+const PLAYER_TWO_SCORE_TAG_ID = 'player2-score';
 const WINNING_COMBO = [
     [0, 1, 2],
     [3, 4, 5],
