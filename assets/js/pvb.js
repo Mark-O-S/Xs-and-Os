@@ -50,7 +50,12 @@ function startGame() {
 function handleCellClick(e) {
     const cell = e.target;
     const currentPlayer = PLAYER_X;
-    placeMark(cell, currentPlayer);
+    
+    // Check if player clicks a taken cell, if they do, do nothing
+    if (!placeMark(cell, currentPlayer)){
+        return;
+    }
+    
 
     if (checkWin(currentPlayer)) {
         endGame(false, false);
@@ -67,7 +72,6 @@ function handleCellClick(e) {
         const freeCells = getNumberOfFreeCells();
         const randomCell = Math.floor(Math.random() * freeCells.length);
         const botCell = freeCells[randomCell]
-        const botPlayer = "bot";
         placeMark(botCell, PLAYER_CIRCLE);
         
         if (checkWin(PLAYER_CIRCLE)) {
@@ -109,7 +113,6 @@ function updatePlayerWinScore(playerScoreTagID) {
     document.getElementById(playerScoreTagID).innerHTML = currentScore
 }
 
-// Note to self - Fix issue that Player O keeps winning
 // End game function
 function endGame(draw, isABot) {
     let playerWinner = BOT_NAME;
@@ -133,9 +136,14 @@ function isaDraw() {
     });
 }
 
-// Place Mark function
+// Place Mark function and make sure that the cell isn't already taken
 function placeMark(cell, currentPlayer) {
-    cell.classList.add(currentPlayer);
+    var cellCanBeTaken = false;
+    if (!cell.classList.contains(PLAYER_CIRCLE)) {
+        cell.classList.add(currentPlayer);
+        cellCanBeTaken = true;
+    }
+    return cellCanBeTaken;
 }
 
 function setBoardHoverClass() {

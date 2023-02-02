@@ -49,7 +49,6 @@ function startGame() {
 }
 
 // Check if player has clicked a cell
-// Note to self: Change this functions for the bot code for tomorrow
 function handleCellClick(e) {
     const cell = e.target;
     const currentPlayer = circleFirst ? PLAYER_CIRCLE : PLAYER_X;
