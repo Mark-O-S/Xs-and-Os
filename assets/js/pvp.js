@@ -2,6 +2,8 @@
 // Set rule to win the game 
 const PLAYER_X = 'x';
 const PLAYER_CIRCLE = 'circle';
+const PLAYER_ONE = 'Player 1';
+const PLAYER_TWO = 'Player 2';
 const WINNING_COMBO = [
     [0, 1, 2],
     [3, 4, 5],
@@ -20,8 +22,6 @@ const boardElement = document.getElementById('board');
 const winningMessage = document.getElementById('winningMsg');
 const winningMessageText = document.getElementById('winningMsgText');
 const restartButton = document.getElementById('restartButton');
-var playerOneName = document.getElementById('player1').value;
-var playerTwoName = document.getElementById('player2').value;
 
 // Start game function
 let circleFirst;
@@ -61,12 +61,24 @@ function handleCellClick(e) {
     }
 }
 
+// Validate the input the user enters for the player name
+// Checks the user input must be less than 11 characters, is a string type and is not an empty string
+function validateplayerNameUserInput (playerName) {
+    validPlayerName = circleFirst ? PLAYER_TWO : PLAYER_ONE;
+    if (playerName !== "" && playerName.length < 11 && typeof playerName === 'string') {
+        validPlayerName = playerName
+    }
+    return validPlayerName
+}
+
 // End game function
 function endGame(draw) {
+    
     if (draw) {
         winningMessageText.innerText = "It's a draw!";
     } else {
-        
+        let playerOneName = validateplayerNameUserInput(document.getElementById('player1').value);
+        let playerTwoName = validateplayerNameUserInput(document.getElementById('player2').value);
         winningMessageText.innerText = `${circleFirst ? playerTwoName : playerOneName} Wins!`;
     }
     winningMessage.classList.add('show');
