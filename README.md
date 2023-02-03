@@ -4,7 +4,7 @@
 
 This is my JavaScript project of Tic Tac Toe. A fun game where 2 players can take turns in playing against each other.
 
-![multi-device image](assets/images/device-views.jpg)
+![multi-device image](assets/images/multi-device.jpg)
 
 <!-- Table of Contents start -->
 
